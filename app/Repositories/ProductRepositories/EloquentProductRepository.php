@@ -56,7 +56,7 @@ class EloquentProductRepository implements ProductRepositoryInterface
         $apiResponse = $this->makeAnAPICallToShopify('GET', $endpoint, null, $headers, null);
         return $apiResponse;
     }
-
+    // check for discounts agsint prodcut
     public function checkForShopifyDiscount($data)
     {
         // Define the API endpoint for retrieving products
@@ -83,6 +83,20 @@ class EloquentProductRepository implements ProductRepositoryInterface
         } else {
             return 'Code Not Matched';
         }
+    }
+
+    // verify shopping details and zones and rates
+    public function getShippingDetailsAndRules($data)
+    {
+// Define the API endpoint for retrieving products
+        $endpoint = "https://$this->storeUrl/admin/api/2021-10/shipping_zones.json"; // Adjust the API version as needed
+
+// Set the headers for the API request
+        $headers = $this->headers;
+
+// Make the API call using your existing function
+        $apiResponse = $this->makeAnAPICallToShopify('GET', $endpoint, null, $headers, null);
+        return $apiResponse;
     }
 
 }

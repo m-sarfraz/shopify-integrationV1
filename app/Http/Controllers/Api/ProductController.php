@@ -76,6 +76,14 @@ class ProductController extends Controller
 
     }
 
+    // function for bringing shipping details
+    public function bringShippingDetails(Request $request)
+    {
+        $country = $request->country; 
+        // call API to get Products
+        $apiResponse = $this->productRepository->getShippingDetailsAndRules($country);
+        return $apiResponse;
+    } 
     // test API if backend is working
     public function test()
     {

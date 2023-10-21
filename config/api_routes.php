@@ -26,6 +26,13 @@ return [
                 'action' => ['App\Http\Controllers\Api\CustomerController', 'createOrUpdateShopifyCustomer'],
                 'name' => 'check-customer-details',
             ],
+            // create order on shopify --production
+            [
+                'method' => 'post',
+                'uri' => 'create-shopify-order',
+                'action' => ['App\Http\Controllers\Api\OrderController', 'createShopifyOrder'],
+                'name' => 'create-shopify-order',
+            ],
             // check for product duscount --production
             [
                 'method' => 'post',
@@ -40,7 +47,20 @@ return [
                 'action' => ['App\Http\Controllers\Api\CustomerController', 'bringShopifyCustomerDetails'],
                 'name' => 'bring-customer-details',
             ],
+            // save countries states json data to DB --devs
+            [
+                'method' => 'get',
+                'uri' => 'bring-countries-states-data',
+                'action' => ['App\Http\Controllers\Api\CustomerController', 'bringCountriesStatesData'],
+                'name' => 'bring-countries-states-data',
+            ],
             // test API working with test method returning a string --dev
+            [
+                'method' => 'post',
+                'uri' => 'bring-shipping-details',
+                'action' => ['App\Http\Controllers\Api\ProductController', 'bringShippingDetails'],
+                'name' => 'bring-shipping-details',
+            ],
             [
                 'method' => 'get',
                 'uri' => 'test',
