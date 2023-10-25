@@ -31,7 +31,7 @@ class EloquentOrderRepository implements OrderRepositoryInterface
         ];
     }
 
-    public function createOrder($data)
+    public function createOrder($data, $customerData)
     {
         $headers = [
             'Content-Type' => 'application/json',
@@ -49,7 +49,7 @@ class EloquentOrderRepository implements OrderRepositoryInterface
                     "title" => $data['title'],
                     "price" => $data['priceHidden'],
                     'grams' => $data['grams'],
-                    "quantity" => $data['quantityHidden'],
+                    "quantity" => "2",
                 ],
             ],
             "tax_lines" => [
@@ -59,6 +59,42 @@ class EloquentOrderRepository implements OrderRepositoryInterface
                     "title" => $data['tax_title'],
                 ],
             ],
+
+            "requires_shipping" => true,
+            "shipping_lines" => [
+                [
+                    "title" => $data['shipping_name'], // Replace with your shipping method
+                    "price" => $data['shipping_price'], // Replace with the shipping cost
+                    "code" => "Standard", // Replace with shipping code if applicable
+                    "source" => "shopify",
+                    // Add other relevant shipping details as needed
+                ],
+            ],
+            "shipping_address" =>
+            [
+                "customer_id" => $customerData['body']['customer']['email'],
+                "first_name" => $customerData['body']['customer']['first_name'],
+                "last_name" => $customerData['body']['customer']['last_name'],
+                "address1" => $customerData['body']['customer']['addresses'][0]['address1'],
+                "address2" => $customerData['body']['customer']['addresses'][0]['address2'],
+                "city" => $customerData['body']['customer']['addresses'][0]['city'],
+                "province" => $customerData['body']['customer']['addresses'][0]['province'],
+                "country" => $customerData['body']['customer']['addresses'][0]['country'],
+                "zip" => $customerData['body']['customer']['addresses'][0]['zip'],
+                "phone" => $customerData['body']['customer']['addresses'][0]['phone'],
+                "name" => $customerData['body']['customer']['addresses'][0]['name'],
+                "province_code" => $customerData['body']['customer']['addresses'][0]['province_code'],
+                "country_code" => $customerData['body']['customer']['addresses'][0]['country_code'],
+                "country_name" => $customerData['body']['customer']['addresses'][0]['country_name'],
+            ],
+            "discount_codes" => [
+                [
+                    "code" => "abc123", // Replace with your discount code
+                    "amount" => 15.00, // Replace with the discount amount
+                    "type" => "fixed_amount", // Specify the type of discount (e.g., fixed_amount or percentage)
+                ],
+            ],
+
             "transactions" => [
                 [
                     "kind" => "sale",

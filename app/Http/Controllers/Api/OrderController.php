@@ -36,7 +36,8 @@ class OrderController extends Controller
         if ($response['statusCode'] != 200) {
             return $this->responseController->errorResponse('Failed to Create Cusomter and Order is not Created, Please verify Billing/Shipping Details are corerct!');
         }
-        $apiResponse = $this->orderRepository->createOrder($data);
+        $customerData = $response;
+        $apiResponse = $this->orderRepository->createOrder($data,$customerData);
         return $apiResponse;
         // if it is list of orders request
         if ($apiResponse['statusCode'] == 200) { 
