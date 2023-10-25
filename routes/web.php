@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::view('/dashboard','admin.index')->name('dashboard');
 
 Route::any('stripewebhook','CheckoutController@stripewebhook');
 //Route::any('customer','CheckoutController@stripewebhook');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

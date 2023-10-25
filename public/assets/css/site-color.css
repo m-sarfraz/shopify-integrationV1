@@ -1,0 +1,58 @@
+:root {
+    --color: #d4a472;
+}
+
+@font-face {
+    font-family: Sacramento-Regular;
+    src: url("../fonts/Sacramento-Regular.ttf");
+}
+
+.display-1 {
+    font-family: Sacramento-Regular !important;
+    padding-top: 10px;
+    color: var(--color) !important;
+}
+
+body {
+    background-color: var(--color) !important;
+    background-image: none;
+}
+
+
+/* body{
+    background-image: url("../img/bg-img.png");
+} */
+
+.bg-F34EFF-top,
+.bg-F34EFF,
+.mobile_tab_img_active {
+    background-color: var(--color) !important;
+}
+
+.activeFont {
+    background-color: var(--color) !important;
+    color: white !important;
+}
+
+.activeAccessary {
+    background-color: var(--color) !important;
+    color: white !important;
+}
+
+.button-color {
+    background-color: var(--color) !important;
+    color: white !important;
+}
+
+.bs-tooltip-auto[x-placement^=top] .arrow::before, .bs-tooltip-top .arrow::before {
+    top: 0;
+    border-width: .4rem .4rem 0;
+    border-top-color: var(--color) !important;
+}
+.tooltip-inner{
+    background-color: var(--color) !important;
+}
+a {
+    text-decoration: none !important;
+    color: black !important;
+}

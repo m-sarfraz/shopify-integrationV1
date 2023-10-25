@@ -72,23 +72,21 @@ class ProductController extends Controller
     {
         $data = $request->all();
         $response = $this->productRepository->checkForShopifyDiscount($data);
-        return $response;
-
+        return response()->json($response);
     }
 
     // function for bringing shipping details
     public function bringShippingDetails(Request $request)
     {
-        $country = $request->country; 
+        $country = $request->country;
         // call API to get Products
         $apiResponse = $this->productRepository->getShippingDetailsAndRules($country);
         return $apiResponse;
-    } 
+    }
     // test API if backend is working
     public function test()
     {
         return 'Backend is Working Fine';
-
     }
 
 }

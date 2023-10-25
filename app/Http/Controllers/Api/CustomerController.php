@@ -20,13 +20,7 @@ class CustomerController extends Controller
         $this->CustomerRepository = $CustomerRepository;
         $this->responseController = $responseController;
     }
-    // dummy static IDS: product id = 4772854497463 & order id = 4341443952823
-    public function createOrUpdateShopifyCustomer(Request $request)
-    {
-        $data = $request->all();
-        $response = $this->CustomerRepository->checkCustomerDetails($data);
-        return $response;
-    }
+    // dummy static IDS: product id = 4772854497463 & order id = 4341443952823 
     public function bringShopifyCustomerDetails(Request $request)
     {
         $data = $request->all();
