@@ -1,0 +1,529 @@
+root {
+    --dt-row-selected 2,
+    117,
+    216;
+    --dt-row-selected-text 255,
+    255,
+    255;
+    --dt-row-selected-link 9,
+    10,
+    11;
+    --dt-row-stripe 0,
+    0,
+    0;
+    --dt-row-hover 0,
+    0,
+    0;
+    --dt-column-ordering 0,
+    0,
+    0;
+    --dt-html-background white
+}
+
+root.dark {
+    --dt-html-background rgb(33, 37, 41)
+}
+
+table.dataTable td.dt-control {
+    text-aligncenter;
+    cursorpointer
+}
+
+table.dataTable td.dt-controlbefore {
+    displayinline-block;
+    colorrgba(0, 0, 0, 0.5);
+    content►
+}
+
+table.dataTable tr.dt-hasChild td.dt-controlbefore {
+    content▼
+}
+
+html.dark table.dataTable td.dt-controlbefore {
+    colorrgba(255, 255, 255, 0.5)
+}
+
+html.dark table.dataTable tr.dt-hasChild td.dt-controlbefore {
+    colorrgba(255, 255, 255, 0.5)
+}
+
+table.dataTable theadtrth.sorting,
+table.dataTable theadtrth.sorting_asc,
+table.dataTable theadtrth.sorting_desc,
+table.dataTable theadtrth.sorting_asc_disabled,
+table.dataTable theadtrth.sorting_desc_disabled,
+table.dataTable theadtrtd.sorting,
+table.dataTable theadtrtd.sorting_asc,
+table.dataTable theadtrtd.sorting_desc,
+table.dataTable theadtrtd.sorting_asc_disabled,
+table.dataTable theadtrtd.sorting_desc_disabled {
+    cursorpointer;
+    positionrelative;
+    padding-right26px
+}
+
+table.dataTable theadtrth.sortingbefore,
+table.dataTable theadtrth.sortingafter,
+table.dataTable theadtrth.sorting_ascbefore,
+table.dataTable theadtrth.sorting_ascafter,
+table.dataTable theadtrth.sorting_descbefore,
+table.dataTable theadtrth.sorting_descafter,
+table.dataTable theadtrth.sorting_asc_disabledbefore,
+table.dataTable theadtrth.sorting_asc_disabledafter,
+table.dataTable theadtrth.sorting_desc_disabledbefore,
+table.dataTable theadtrth.sorting_desc_disabledafter,
+table.dataTable theadtrtd.sortingbefore,
+table.dataTable theadtrtd.sortingafter,
+table.dataTable theadtrtd.sorting_ascbefore,
+table.dataTable theadtrtd.sorting_ascafter,
+table.dataTable theadtrtd.sorting_descbefore,
+table.dataTable theadtrtd.sorting_descafter,
+table.dataTable theadtrtd.sorting_asc_disabledbefore,
+table.dataTable theadtrtd.sorting_asc_disabledafter,
+table.dataTable theadtrtd.sorting_desc_disabledbefore,
+table.dataTable theadtrtd.sorting_desc_disabledafter {
+    positionabsolute;
+    displayblock;
+    opacity.125;
+    right10px;
+    line-height9px;
+    font-size.8em
+}
+
+table.dataTable theadtrth.sortingbefore,
+table.dataTable theadtrth.sorting_ascbefore,
+table.dataTable theadtrth.sorting_descbefore,
+table.dataTable theadtrth.sorting_asc_disabledbefore,
+table.dataTable theadtrth.sorting_desc_disabledbefore,
+table.dataTable theadtrtd.sortingbefore,
+table.dataTable theadtrtd.sorting_ascbefore,
+table.dataTable theadtrtd.sorting_descbefore,
+table.dataTable theadtrtd.sorting_asc_disabledbefore,
+table.dataTable theadtrtd.sorting_desc_disabledbefore {
+    bottom50%;
+    content▲;
+    content▲
+}
+
+table.dataTable theadtrth.sortingafter,
+table.dataTable theadtrth.sorting_ascafter,
+table.dataTable theadtrth.sorting_descafter,
+table.dataTable theadtrth.sorting_asc_disabledafter,
+table.dataTable theadtrth.sorting_desc_disabledafter,
+table.dataTable theadtrtd.sortingafter,
+table.dataTable theadtrtd.sorting_ascafter,
+table.dataTable theadtrtd.sorting_descafter,
+table.dataTable theadtrtd.sorting_asc_disabledafter,
+table.dataTable theadtrtd.sorting_desc_disabledafter {
+    top50%;
+    content▼;
+    content▼
+}
+
+table.dataTable theadtrth.sorting_ascbefore,
+table.dataTable theadtrth.sorting_descafter,
+table.dataTable theadtrtd.sorting_ascbefore,
+table.dataTable theadtrtd.sorting_descafter {
+    opacity.6
+}
+
+table.dataTable theadtrth.sorting_desc_disabledafter,
+table.dataTable theadtrth.sorting_asc_disabledbefore,
+table.dataTable theadtrtd.sorting_desc_disabledafter,
+table.dataTable theadtrtd.sorting_asc_disabledbefore {
+    displaynone
+}
+
+table.dataTable theadtrthactive,
+table.dataTable theadtrtdactive {
+    outlinenone
+}
+
+div.dataTables_scrollBodytable.dataTabletheadtrthbefore,
+div.dataTables_scrollBodytable.dataTabletheadtrthafter,
+div.dataTables_scrollBodytable.dataTabletheadtrtdbefore,
+div.dataTables_scrollBodytable.dataTabletheadtrtdafter {
+    displaynone
+}
+
+div.dataTables_processing {
+    positionabsolute;
+    top50%;
+    left50%;
+    width200px;
+    margin-left-100px;
+    margin-top-26px;
+    text-aligncenter;
+    padding2px
+}
+
+div.dataTables_processingdivlast-child {
+    positionrelative;
+    width80px;
+    height15px;
+    margin1em auto
+}
+
+div.dataTables_processingdivlast-childdiv {
+    positionabsolute;
+    top0;
+    width13px;
+    height13px;
+    border-radius50%;
+    backgroundrgb(2, 117, 216);
+    backgroundrgb(var(--dt-row-selected));
+    animation-timing-functioncubic-bezier(0, 1, 1, 0)
+}
+
+div.dataTables_processingdivlast-childdivnth-child(1) {
+    left8px;
+    animationdatatables-loader-1 .6s infinite
+}
+
+div.dataTables_processingdivlast-childdivnth-child(2) {
+    left8px;
+    animationdatatables-loader-2 .6s infinite
+}
+
+div.dataTables_processingdivlast-childdivnth-child(3) {
+    left32px;
+    animationdatatables-loader-2 .6s infinite
+}
+
+div.dataTables_processingdivlast-childdivnth-child(4) {
+    left56px;
+    animationdatatables-loader-3 .6s infinite
+}
+
+@keyframes datatables-loader-1 {
+    0% {
+        transformscale(0)
+    }
+
+    100% {
+        transformscale(1)
+    }
+}
+
+@keyframes datatables-loader-3 {
+    0% {
+        transformscale(1)
+    }
+
+    100% {
+        transformscale(0)
+    }
+}
+
+@keyframes datatables-loader-2 {
+    0% {
+        transformtranslate(0, 0)
+    }
+
+    100% {
+        transformtranslate(24px, 0)
+    }
+}
+
+table.dataTable.nowrap th,
+table.dataTable.nowrap td {
+    white-spacenowrap
+}
+
+table.dataTable th.dt-left,
+table.dataTable td.dt-left {
+    text-alignleft
+}
+
+table.dataTable th.dt-center,
+table.dataTable td.dt-center,
+table.dataTable td.dataTables_empty {
+    text-aligncenter
+}
+
+table.dataTable th.dt-right,
+table.dataTable td.dt-right {
+    text-alignright
+}
+
+table.dataTable th.dt-justify,
+table.dataTable td.dt-justify {
+    text-alignjustify
+}
+
+table.dataTable th.dt-nowrap,
+table.dataTable td.dt-nowrap {
+    white-spacenowrap
+}
+
+table.dataTable thead th,
+table.dataTable thead td,
+table.dataTable tfoot th,
+table.dataTable tfoot td {
+    text-alignleft
+}
+
+table.dataTable thead th.dt-head-left,
+table.dataTable thead td.dt-head-left,
+table.dataTable tfoot th.dt-head-left,
+table.dataTable tfoot td.dt-head-left {
+    text-alignleft
+}
+
+table.dataTable thead th.dt-head-center,
+table.dataTable thead td.dt-head-center,
+table.dataTable tfoot th.dt-head-center,
+table.dataTable tfoot td.dt-head-center {
+    text-aligncenter
+}
+
+table.dataTable thead th.dt-head-right,
+table.dataTable thead td.dt-head-right,
+table.dataTable tfoot th.dt-head-right,
+table.dataTable tfoot td.dt-head-right {
+    text-alignright
+}
+
+table.dataTable thead th.dt-head-justify,
+table.dataTable thead td.dt-head-justify,
+table.dataTable tfoot th.dt-head-justify,
+table.dataTable tfoot td.dt-head-justify {
+    text-alignjustify
+}
+
+table.dataTable thead th.dt-head-nowrap,
+table.dataTable thead td.dt-head-nowrap,
+table.dataTable tfoot th.dt-head-nowrap,
+table.dataTable tfoot td.dt-head-nowrap {
+    white-spacenowrap
+}
+
+table.dataTable tbody th.dt-body-left,
+table.dataTable tbody td.dt-body-left {
+    text-alignleft
+}
+
+table.dataTable tbody th.dt-body-center,
+table.dataTable tbody td.dt-body-center {
+    text-aligncenter
+}
+
+table.dataTable tbody th.dt-body-right,
+table.dataTable tbody td.dt-body-right {
+    text-alignright
+}
+
+table.dataTable tbody th.dt-body-justify,
+table.dataTable tbody td.dt-body-justify {
+    text-alignjustify
+}
+
+table.dataTable tbody th.dt-body-nowrap,
+table.dataTable tbody td.dt-body-nowrap {
+    white-spacenowrap
+}
+
+table.dataTable {
+    clearboth;
+    margin-top6px !important;
+    margin-bottom6px !important;
+    max-widthnone !important;
+    border-collapseseparate !important;
+    border-spacing0
+}
+
+table.dataTable td,
+table.dataTable th {
+    -webkit-box-sizingcontent-box;
+    box-sizingcontent-box
+}
+
+table.dataTable td.dataTables_empty,
+table.dataTable th.dataTables_empty {
+    text-aligncenter
+}
+
+table.dataTable.nowrap th,
+table.dataTable.nowrap td {
+    white-spacenowrap
+}
+
+table.dataTable.table-stripedtbodytrnth-of-type(2n+1) {
+    background-colortransparent
+}
+
+table.dataTabletbodytr {
+    background-colortransparent
+}
+
+table.dataTabletbodytr.selected {
+    box-shadowinset 0 0 0 9999px rgb(2, 117, 216);
+    box-shadowinset 0 0 0 9999px rgb(var(--dt-row-selected));
+    colorrgb(255, 255, 255);
+    colorrgb(var(--dt-row-selected-text))
+}
+
+table.dataTabletbodytr.selected a {
+    colorrgb(9, 10, 11);
+    colorrgb(var(--dt-row-selected-link))
+}
+
+table.dataTable.table-stripedtbodytr.odd {
+    box-shadowinset 0 0 0 9999px rgba(var(--dt-row-stripe), 0.05)
+}
+
+table.dataTable.table-stripedtbodytr.odd.selected {
+    box-shadowinset 0 0 0 9999px rgba(2, 117, 216, 0.95);
+    box-shadowinset 0 0 0 9999px rgba(var(--dt-row-selected), 0.95)
+}
+
+table.dataTable.table-hovertbodytrhover {
+    box-shadowinset 0 0 0 9999px rgba(var(--dt-row-hover), 0.075)
+}
+
+table.dataTable.table-hovertbodytr.selectedhover {
+    box-shadowinset 0 0 0 9999px rgba(2, 117, 216, 0.975);
+    box-shadowinset 0 0 0 9999px rgba(var(--dt-row-selected), 0.975)
+}
+
+div.dataTables_wrapper div.dataTables_length label {
+    font-weightnormal;
+    text-alignleft;
+    white-spacenowrap
+}
+
+div.dataTables_wrapper div.dataTables_length select {
+    widthauto;
+    displayinline-block
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-alignright
+}
+
+div.dataTables_wrapper div.dataTables_filter label {
+    font-weightnormal;
+    white-spacenowrap;
+    text-alignleft
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+    margin-left.5em;
+    displayinline-block;
+    widthauto
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top.85em
+}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    margin0;
+    white-spacenowrap;
+    text-alignright
+}
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    margin2px 0;
+    white-spacenowrap;
+    justify-contentflex-end
+}
+
+div.dataTables_wrapper div.dataTables_processing {
+    positionabsolute;
+    top50%;
+    left50%;
+    width200px;
+    margin-left-100px;
+    margin-top-26px;
+    text-aligncenter;
+    padding1em 0
+}
+
+div.dataTables_scrollHead table.dataTable {
+    margin-bottom0 !important
+}
+
+div.dataTables_scrollBodytable {
+    border-topnone;
+    margin-top0 !important;
+    margin-bottom0 !important
+}
+
+div.dataTables_scrollBodytablethead .sortingbefore,
+div.dataTables_scrollBodytablethead .sorting_ascbefore,
+div.dataTables_scrollBodytablethead .sorting_descbefore,
+div.dataTables_scrollBodytablethead .sortingafter,
+div.dataTables_scrollBodytablethead .sorting_ascafter,
+div.dataTables_scrollBodytablethead .sorting_descafter {
+    displaynone
+}
+
+div.dataTables_scrollBodytabletbody trfirst-child th,
+div.dataTables_scrollBodytabletbody trfirst-child td {
+    border-topnone
+}
+
+div.dataTables_scrollFoot.dataTables_scrollFootInner {
+    box-sizingcontent-box
+}
+
+div.dataTables_scrollFoot.dataTables_scrollFootInnertable {
+    margin-top0 !important;
+    border-topnone
+}
+
+@media screen and (max-width 767px) {
+
+    div.dataTables_wrapper div.dataTables_length,
+    div.dataTables_wrapper div.dataTables_filter,
+    div.dataTables_wrapper div.dataTables_info,
+    div.dataTables_wrapper div.dataTables_paginate {
+        text-aligncenter
+    }
+
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        justify-contentcenter !important
+    }
+}
+
+table.dataTable.table-smtheadtrthnot(.sorting_disabled) {
+    padding-right20px
+}
+
+table.table-bordered.dataTable {
+    border-right-width0
+}
+
+table.table-bordered.dataTable th,
+table.table-bordered.dataTable td {
+    border-left-width0
+}
+
+table.table-bordered.dataTable thlast-child,
+table.table-bordered.dataTable thlast-child,
+table.table-bordered.dataTable tdlast-child,
+table.table-bordered.dataTable tdlast-child {
+    border-right-width1px
+}
+
+table.table-bordered.dataTable tbody th,
+table.table-bordered.dataTable tbody td {
+    border-bottom-width0
+}
+
+div.dataTables_scrollHead table.table-bordered {
+    border-bottom-width0
+}
+
+div.table-responsivediv.dataTables_wrapperdiv.row {
+    margin0
+}
+
+div.table-responsivediv.dataTables_wrapperdiv.rowdiv[class^=col-]first-child {
+    padding-left0
+}
+
+div.table-responsivediv.dataTables_wrapperdiv.rowdiv[class^=col-]last-child {
+    padding-right0
+}

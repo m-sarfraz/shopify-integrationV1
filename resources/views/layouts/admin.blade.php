@@ -37,7 +37,7 @@
         type="text/css" />
     <link href="{{asset('assets/admin/plugins/select2/select2.min.css')}}" rel="stylesheet" type="text/css"	/>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/sweetalert/sweetalert.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap4.min.css') }}"> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
 
     <style>
@@ -138,11 +138,11 @@
 
                     <li class="treeview" onclick="menuOpenClose(this)">
                         <a href="#">
-                            <i class="fa fa-dashboard"></i> <span>Orders</span> <i
+                            <i class="fa fa-dashboard"></i> <span>Shipping</span> <i
                                 class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li  class=""><a href="{{route('manage-shipping')}}"><i class="fa fa-circle-o"></i> All  orders</a></li>
+                            <li  class=""><a href="{{route('manage-shipping')}}"><i class="fa fa-circle-o"></i> Manage Shipping</a></li>
                         </ul>
                     </li>
                 </ul>
