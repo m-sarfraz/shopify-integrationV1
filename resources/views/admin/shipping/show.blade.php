@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title','Order Detail')
 @section('breadcrumb')
-  <li><a href="{{route('orders.index')}}">Orders</a></li>
+  <li><a href="">Orders</a></li>
   <li class="active">View Order</li>
 @endsection
 @section('content')
@@ -46,7 +46,7 @@
       <div class="col-xs-12">
         <h2 class="page-header">
           <i class="fa fa-globe"></i> TheArtPalaceDesign
-          <small class="pull-right">Date: {{date('d/m/Y',strtotime($order->created_at))}}</small>
+          <small class="pull-right">Date: </small>
         </h2>
       </div><!-- /.col -->
     </div>
@@ -56,12 +56,9 @@
         <div class="col-xs-12">
           <h2>
             <small class="pull-right">
-              <a href="{{route($order->is_track =='0'?'addOrderTracking':'updateOrderTracking',$order->id)}}" class="btn btn-inline btn-info btn-sm" style="margin-top: 5px;margin-right:10px;">{{$order->is_track =='0'?'Add':'Update'}} Order Tracking</a>
+              <a href=" " class="btn btn-inline btn-info btn-sm" style="margin-top: 5px;margin-right:10px;">   Order Tracking</a>
 
-              @if($order->status!='cancel')
-                <button class="btn btn-inline btn-info bg-danger btn-sm" style="margin-top: 5px;margin-right:10px;" type="button" onclick="commonFunction(true,'{{route('orders.update',$order->id)}}','','put','Are you sure you want to cancel order?')">Cancel</button>
-              @endif
-
+    
             </small>
           </h2>
         </div><!-- /.col -->
@@ -85,10 +82,10 @@
       </div> --}}
       <!-- /.col -->
       <div class="col-sm-12 invoice-col">
-        @if($order->phone_number !='') <b>Phone Number: </b> {{ $order->phone_number }}<br/> @endif
-        <b>Invoice: {{date('Ymd').'-'.$order->id}}</b><br/>
-        <b>Order Number: </b> {{ $order->order_number }}<br/>
-        <b>Payment Method: </b> {{ $order->payment_method }}<br/>
+     
+        <b>Invoice:  </b><br/>
+        <b>Order Number: </b>  <br/>
+        <b>Payment Method: </b>  <br/>
       </div><!-- /.col -->
     </div><!-- /.row -->
 
@@ -116,27 +113,22 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($order->orderDetails as $key=>$item)
-
-              <tr>
-                <td>{{ ++$key }}</td>
-                <td><img width="60" height="30" src="{{ asset($item->image) }}" data-toggle="modal" data-target="#myModal"  alt="" onclick="imagePopUp(this);"></td>
-                <td>{{ $item->title }}</td>
-                <td>{{$item->quantity}}</td>
-                <td>{{$item->line_one_text}}</td>
-                <td>{{$item->line_two_text}}</td>
-                <td>{{$item->line_three_text}}</td>
-                <td>{{$item->size}}</td>
-                <td>{{$item->fonts}}</td>
-                <td>{{$item->colors}}</td>
-                <td>{{$item->install}}</td>
-                <td>{{$item->backing_color}}</td>
-                <td>{{$item->backing_shape}}</td>
-                <td>{{$item->is_rush_order=='1'?'Yes':'No'}}</td>
-                <td>${{$item->sub_total}}</td>
-              </tr>
-
-            @endforeach
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+            <td> key </td>
+           
           </tbody>
         </table>
       </div><!-- /.col -->
@@ -145,37 +137,15 @@
     <div class="row">
       <!-- accepted payments column -->
       <div class="col-xs-6">
-        @if($order->is_track=='1')
-          <p class="lead">Order Tracking</p>
-          <div class="table-responsive">
-            <table class="table">
-              <tr>
-                <th style="width:50%">Tracking Number:</th>
-                <td>{{$order->order_tracking}}</td>
-              </tr>
-              {{-- <tr>
-                <th>Tax (9.3%)</th>
-                <td>$10.34</td>
-              </tr> --}}
-              <tr>
-                <th>Courier:</th>
-                <td>{{$order->order_courier}}</td>
-              </tr>
-              <tr>
-                <th>Shipping Date:</th>
-                <td>{{$order->order_shipping_date}}</td>
-              </tr>
-            </table>
-          </div>
-        @endif
+     
       </div><!-- /.col -->
       <div class="col-xs-6">
-        <p class="lead">Amount Due {{date('d/m/Y',strtotime($order->created_at))}}</p>
+        <p class="lead">Amount Due </p>
         <div class="table-responsive">
           <table class="table">
             <tr>
               <th style="width:50%">Subtotal:</th>
-              <td>${{$order->sub_total}}</td>
+              <td> </td>
             </tr>
             {{-- <tr>
               <th>Tax (9.3%)</th>
@@ -183,15 +153,15 @@
             </tr> --}}
             <tr>
               <th>Discount:</th>
-              <td>${{$order->discount_amount}}</td>
+              <td> </td>
             </tr>
             <tr>
               <th>Shipping:</th>
-              <td>${{$order->shipping_cost}}</td>
+              <td> </td>
             </tr>
             <tr>
               <th>Total:</th>
-              <td>${{$order->total}}</td>
+              <td> </td>
             </tr>
           </table>
         </div>
@@ -204,18 +174,6 @@
 
 @section('script')
   <script>
-    var modal = document.getElementById("myModal");
-    function imagePopUp(e){
-      var modalImg = document.getElementById("img01");
-      var captionText = document.getElementById("caption");
-      modal.style.display = "block";
-      modalImg.src = e.src;
-      captionText.innerHTML = e.alt;
-    }
-
-    setInterval(function(){
-      $('body').css('padding-right','0px');
-      $('.modal-backdrop').remove();
-    },100);
+   
   </script>
 @endsection

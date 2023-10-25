@@ -142,7 +142,7 @@
                                 class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li  class=""><a href=""><i class="fa fa-circle-o"></i> All  orders</a></li>
+                            <li  class=""><a href="{{route('manage-shipping')}}"><i class="fa fa-circle-o"></i> All  orders</a></li>
                         </ul>
                     </li>
                 </ul>

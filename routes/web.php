@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -11,15 +13,15 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-// Route::view('checkout', 'checkout.checkout');
+ */
+ 
 Route::get('/', function () {
     return view('welcome');
-});
-Route::view('/dashboard','admin.index')->name('dashboard');
-
-Route::any('stripewebhook','CheckoutController@stripewebhook');
-//Route::any('customer','CheckoutController@stripewebhook');
+}); 
+// Auth routes came from bootstrap scaffolding 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// admin dashboard routes 
+Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/manage-shipping', [AdminController::class, 'manageShipping'])->name('manage-shipping');
