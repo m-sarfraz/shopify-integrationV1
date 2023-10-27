@@ -33,14 +33,15 @@ class EloquentOrderRepository implements OrderRepositoryInterface
 
     public function createOrder($data, $customerData)
     {
+        // append header array for Shopify API Call
         $headers = [
             'Content-Type' => 'application/json',
             'X-Shopify-Access-Token' => $this->accessToken,
         ];
         // Define the API endpoint for creating customer with post request
         $endpoint = "https://$this->storeUrl/admin/api/2021-10/orders.json";
-
         // Email does not exist in the response create a new customer
+        // return $data;
         $payload = ["order" => [
             "email" => $data['email'],
             "line_items" => [
@@ -89,19 +90,12 @@ class EloquentOrderRepository implements OrderRepositoryInterface
             ],
             "discount_codes" => [
                 [
-                    "code" => "abc123", // Replace with your discount code
-                    "amount" => 15.00, // Replace with the discount amount
-                    "type" => "fixed_amount", // Specify the type of discount (e.g., fixed_amount or percentage)
+                    "code" => $data['discount_code'],
+                    "amount" => $data['discount_amount'],
+                    "type" => $data['discount_code'],
                 ],
             ],
 
-            "transactions" => [
-                [
-                    "kind" => "sale",
-                    "status" => "success",
-                    "amount" => $data['totalAmountHidden'],
-                ],
-            ],
             "total_tax" => $data['tax_price'],
             "currency" => "EUR",
             //   [
@@ -111,16 +105,50 @@ class EloquentOrderRepository implements OrderRepositoryInterface
             //      'grams'=> 1200,
             //      "quantity"   => 2,
             //   ],
-            "financial_status" => "pending",
 
         ]];
+        // handle billing according to customer selected option for same as shipping or diff billing
+        if ($data['addressOption'] == 'sameShipping') {
+            $payload['order']['billing_address'] = $payload['order']['shipping_address'];
+        } else if ($data['addressOption'] == 'diffShipping') {
+            $payload['order']['billing_address'] = [
+                "customer_id" => $customerData['body']['customer']['email'],
+                'first_name' => $data['address2_firstName'],
+                'last_name' => $data['address2_lastName'],
+                'address1' => $data['address2'],
+                'city' => $data['address2_city'],
+                'province' => $data['zone'],
+                'country' => $data['address2_country'],
+                'zip' => $data['address2_zip_code'],
+                'appartment' => $data['address2_appartment'],
+                "phone" => $customerData['body']['customer']['addresses'][0]['phone'],
+                "name" => $customerData['body']['customer']['addresses'][0]['name'],
+                "province_code" => $customerData['body']['customer']['addresses'][0]['province_code'],
+                "country_code" => $customerData['body']['customer']['addresses'][0]['country_code'],
+                "country_name" => $customerData['body']['customer']['addresses'][0]['country_name'],
+            ];
+        }
+        // handle payment ways to append order payload either successfull paypal or COD
+        if ($data['paymentOption'] == 'COD') {
+            $payload['order']['gateway'] = 'cash_on_delivery';
+            $payload['order']['financial_status'] = "pending";
+        } else if ($data['paymentOption'] == 'paypal') {
+            $payload['order']['transactions'] = [
+                ["kind" => "sale",
+                    "status" => "success",
+                    "amount" => $data['totalAmountHidden']],
+            ];
+            $payload['order']['gateway'] = 'paypal';
+            $payload['order']['financial_status'] = 'paid';
 
+        }
+        // return $payload;
         // Optionally, you can convert the array to JSON if needed
         // $payload = json_encode($payload);
 
         // Now $payload contains the array of parameters equivalent to the cURL command.
 
-        // Make the API call using your existing function
+        // Make the API call using your existing function or making Shopify API Call
         $apiResponse = $this->makeAnAPICallToShopify('POST', $endpoint, null, $headers, $payload);
         return $apiResponse;
     }
@@ -177,16 +205,16 @@ class EloquentOrderRepository implements OrderRepositoryInterface
                                 'first_name' => $data['address_first_name'],
                                 'country' => $data['country'],
                             ],
-                            [
-                                'address2' => $data['address2'],
-                                'city' => $data['address2_city'],
-                                'province' => 'ON',
-                                'phone' => '555-1212',
-                                'zip' => $data['address2_zip_code'],
-                                'last_name' => $data['address2_lastName'],
-                                'first_name' => $data['address2_firstName'],
-                                'country' => $data['address2_country'],
-                            ],
+                            // [
+                            //     'address2' => $data['address2'],
+                            //     'city' => $data['address2_city'],
+                            //     'province' => 'ON',
+                            //     'phone' => '555-1212',
+                            //     'zip' => $data['address2_zip_code'],
+                            //     'last_name' => $data['address2_lastName'],
+                            //     'first_name' => $data['address2_firstName'],
+                            //     'country' => $data['address2_country'],
+                            // ],
                         ],
                         'password' => 'shopify123',
                         'password_confirmation' => 'shopify123',

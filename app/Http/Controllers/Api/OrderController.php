@@ -37,11 +37,18 @@ class OrderController extends Controller
             return $this->responseController->errorResponse('Failed to Create Cusomter and Order is not Created, Please verify Billing/Shipping Details are corerct!');
         }
         $customerData = $response;
-        $apiResponse = $this->orderRepository->createOrder($data,$customerData);
+        $apiResponse = $this->orderRepository->createOrder($data, $customerData);
         return $apiResponse;
         // if it is list of orders request
-        if ($apiResponse['statusCode'] == 200) { 
+        if ($apiResponse['statusCode'] == 200) {
             $products = $apiResponse['body']['order'];
+            // $discount = new Discount();
+            // $discount->discount_id = $data['value'];
+            // $discount->customer_id = $data['value'];
+            // $discount->discount = $data['value'];
+            // $discount->once_per_customer = $data['value'];
+            // $discount->usage_limit = $data['value'];
+            // $discount->save();
             return $this->responseController->successResponse($products);
         } else {
             return $this->responseController->errorResponse('Failed to retrieve orders');
