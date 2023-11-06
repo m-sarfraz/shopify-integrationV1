@@ -1,0 +1,219 @@
+@font-face {
+    font-family: Segoe UI;
+    src: url(../Fonts/Segoe\ UI.woff);
+}
+@font-face {
+    font-family: SegoeBold;
+    src: url(../Fonts/Segoe\ UI\ Bold.woff);
+}
+body{
+    font-family: Segoe UI !important;
+}
+.bold{
+    font-family: SegoeBold;
+
+}
+.grey{
+    color: #a7a7a7;
+}
+.cotct-div{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.main-div{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.main-div{
+    max-width: 64%;
+    margin: auto;
+}
+.left-div{
+
+    width: 50%;
+    display: flex;
+    /* justify-content: end; */
+
+}
+.right-div{
+    display: flex;
+    justify-content: center;
+}
+.label{
+    font-size: 24px;
+}
+.input-field{
+    border: 1px solid #dedede;
+    margin-top: 10px;
+    padding: 20px;
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.Apply-field{
+    border: 1px solid #dedede;
+    padding: 15px;
+    border-radius: 5px;
+    width: 70%;
+}
+.token-div{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.apply-btn{
+    background-color: #f1f1f1;
+    border: 1px solid #dedede !important;
+    color: #838383;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.del-label{
+    display: block;
+    margin-top: 20px;
+    font-size: 24px;
+}
+select{
+    width: 100%;
+    padding: 20px;
+   
+    border: 1px solid #dedede;
+    border-radius: 5px;
+}
+.df{
+    display: flex;
+}
+.w-100{
+    width: 100%;
+}
+.w-40{
+    width: 48%;
+    display: flex;
+}
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.w-30{
+    width: 31%;
+    display: flex;
+}
+.mt20{
+    margin-top: 20px;
+}
+.ship-pra{
+    background-color: #f6f6f6;
+    padding: 20px;
+}
+.payment-para{
+    color: rgba(0,0,0,0.56);
+    margin: 5px 0px;
+    font-size: 14px;
+}
+.pay-pra{
+    background-color: #f6f6f6;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 10px !important;
+    margin-bottom: 0;
+}
+.bil-pra{
+    background-color: #f6f6f6;
+    padding: 20px;
+    margin: 0;
+    border: 1px solid #dedede;
+}
+.submit-btn{
+    font-family: SegoeBold;
+    margin-top: 30px;
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.ps20{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.main-right{
+    display: flex;
+ 
+}
+.title-product{
+    display: flex;
+}
+.p-size{
+    color: rgba(0,0,0,0.56);
+    font-size: 12px;
+}
+.pr-title{
+    font-size: 14px;
+    font-family: SegoeBold;
+}
+.br5{
+    border-radius: 5px;
+}
+.sub-total{
+    display: flex;
+    justify-content: space-between;
+}
+.mt20{
+    margin-top: 20px;
+}
+.sub-total p{
+    margin-top: 0.5rem ;
+    margin-bottom: 0.5rem;
+}
+
+.sticky-element{
+    background-color: #fafafa;
+    padding: 50px;
+}
+.cp{
+    cursor: pointer;
+}
+.second-Address-div{
+    padding: 20px;
+    background-color: #fafafa;
+}
+@media (max-width:1033px){
+    .main-div {
+        display: block;
+    }
+    .left-div {
+        width: 100%;
+    }
+    .w-40 {
+        width: 100%;
+    }
+    .w-30 {
+        width: 100%;
+    }
+    .main-div {
+        padding: 20px;
+    }
+    .right-div{
+        margin-top: 20px;
+    }
+    .main-div {
+        max-width: 100%;
+        margin: auto;
+    }
+    .sticky-element {
+       
+        padding: 0px;
+    }
+}
