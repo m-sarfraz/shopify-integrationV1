@@ -25,7 +25,7 @@ class EloquentCustomerRepository implements CustomerRepositoryInterface
     }
 
 
-    public function bringCustomeDetails($data)
+    public function bringCustomerDetails($data)
     {
         $email = $data['email'];
         $endpoint = "https://$this->storeUrl/admin/api/2021-10/customers/search.json?query=email%3A$email";

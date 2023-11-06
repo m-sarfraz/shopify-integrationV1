@@ -25,7 +25,7 @@ class CustomerController extends Controller
     {
         $data = $request->all();
         // $response = $this->orderRepository->verifyZipCode($data);
-        $response = $this->CustomerRepository->bringCustomeDetails($data);
+        $response = $this->CustomerRepository->bringCustomerDetails($data);
         return $response;
     }
 
