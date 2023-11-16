@@ -1,0 +1,983 @@
+{
+  "application": {
+    "id": 1,
+    "uuid": "82dd26e7-9cb2-4369-b52a-0cd6a46c4c12",
+    "consumer": {
+      "id": 1,
+      "user_id": 5,
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@ecxample.com",
+      "phone": "000000000",
+      "dob": "1990-05-18",
+      "current_address": {
+        "id": 1,
+        "application_id": 1,
+        "consumer_id": 1,
+        "value": "1 Infinite Loop, Cupertino, CA 95014, USA",
+        "own_property": 1,
+        "duration": 1,
+        "is_previous_address": 2,
+        "allow_joint": 0
+      },
+      "previous_address": {
+        "id": 2,
+        "application_id": 1,
+        "consumer_id": 1,
+        "value": "2 Infinite Loop, Cupertino, CA 95014, USA",
+        "own_property": 0,
+        "duration": 2,
+        "is_previous_address": 1,
+        "allow_joint": 0
+      },
+      "dependents": [
+        {
+          "id": 1,
+          "application_id": 1,
+          "name": "Dependant 1 Doe",
+          "dob": "2022-02-20",
+          "allow_joint": 0
+        },
+        {
+          "id": 2,
+          "application_id": 1,
+          "name": "Dependant 2 Doe",
+          "dob": "2013-03-21",
+          "allow_joint": 0
+        }
+      ]
+    },
+    "joint_applicant": {
+      "id": 2,
+      "user_id": null,
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "email": "jane.doe@example.com",
+      "phone": "000000000",
+      "dob": "1985-02-05",
+      "current_address": {
+        "id": 3,
+        "application_id": 1,
+        "consumer_id": 2,
+        "value": "1 Infinite Loop, Cupertino, CA 95014, USA",
+        "own_property": 0,
+        "duration": 3,
+        "is_previous_address": 2,
+        "allow_joint": 0
+      },
+      "previous_address": null,
+      "dependents": []
+    },
+    "has_joint_applicant": true,
+    "dependents": {
+      "main": [
+        {
+          "id": 1,
+          "consumer_id": 1,
+          "name": "Dependant 1 Doe",
+          "date_of_birth": "2022-02-20",
+          "allow_joint": 0
+        },
+        {
+          "id": 2,
+          "consumer_id": 1,
+          "name": "Dependant 2 Doe",
+          "date_of_birth": "2013-03-21",
+          "allow_joint": 0
+        }
+      ],
+      "joint": []
+    },
+    "incomes": {
+      "main": {
+        "salary_incomes": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "base_salary": 1,
+            "base_salary_duration_type": "yearly",
+            "employment_type": "full_time",
+            "employer": "JD Employer",
+            "occupation": "IT",
+            "start_date": "2017-01-01",
+            "is_under_90_day_probation": 0,
+            "is_previous_employer": 0,
+            "overtime_value": 0,
+            "overtime_value_duration_type": "weekly",
+            "allowance_value": 0,
+            "allowance_value_duration_type": "weekly",
+            "bonus_value": 0,
+            "bonus_value_duration_type": "weekly",
+            "commission_value": 0,
+            "commission_value_duration_type": "weekly"
+          },
+          {
+            "id": 5,
+            "consumer_id": 1,
+            "base_salary": 1,
+            "base_salary_duration_type": "yearly",
+            "employment_type": "full_time",
+            "employer": "JD Employer 2",
+            "occupation": "IT",
+            "start_date": "2017-01-01",
+            "is_under_90_day_probation": 0,
+            "is_previous_employer": 0,
+            "overtime_value": 0,
+            "overtime_value_duration_type": "weekly",
+            "allowance_value": 0,
+            "allowance_value_duration_type": "weekly",
+            "bonus_value": 0,
+            "bonus_value_duration_type": "weekly",
+            "commission_value": 0,
+            "commission_value_duration_type": "weekly"
+          }
+        ],
+        "trader_incomes": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "sole_trader_name": "JD Sole Trader",
+            "ird_number": "IRD001",
+            "profit_after_expenses": 1,
+            "profit_after_expenses_type": "yearly"
+          }
+        ],
+        "business_incomes": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "business_registered_name": "JD Business",
+            "ird_number": "IRD001",
+            "net_profit": 1,
+            "net_profit_type": "yearly",
+            "owner_drawings": 1,
+            "owner_drawings_type": "yearly",
+            "allow_joint": 0
+          }
+        ],
+        "property_incomes": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "address": "1 Infinite Loop, Cupertino, CA 95014, USA",
+            "property_type": "owner",
+            "market_value": 1,
+            "loan_balance": 1,
+            "loan_repayments": 1,
+            "loan_repayment_duration_type": "weekly",
+            "income_from_property": 1,
+            "income_from_property_duration_type": "weekly",
+            "is_property_as_investment": 1,
+            "is_property_be_sold": 0,
+            "allow_joint": 0,
+            "is_current_address": 1
+          }
+        ],
+        "other_incomes": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "amount": 1,
+            "amount_duration_type": "yearly",
+            "income_source": "Other",
+            "allow_joint": 0
+          }
+        ]
+      },
+      "joint": {
+        "salary_incomes": [
+          {
+            "id": 2,
+            "consumer_id": 2,
+            "base_salary": 1,
+            "base_salary_duration_type": "yearly",
+            "employment_type": "full_time",
+            "employer": "JD Employer",
+            "occupation": "Accounting",
+            "start_date": "2017-01-01",
+            "is_under_90_day_probation": 0,
+            "is_previous_employer": 0,
+            "overtime_value": 0,
+            "overtime_value_duration_type": "weekly",
+            "allowance_value": 0,
+            "allowance_value_duration_type": "weekly",
+            "bonus_value": 0,
+            "bonus_value_duration_type": "weekly",
+            "commission_value": 0,
+            "commission_value_duration_type": "weekly"
+          }
+        ],
+        "trader_incomes": [],
+        "business_incomes": [],
+        "property_incomes": [],
+        "other_incomes": []
+      }
+    },
+    "expenses": {
+      "main": {
+        "living": [
+          {
+            "id": 5,
+            "consumer_id": 1,
+            "expense_type": "living",
+            "other_type_name": null,
+            "amount": 1,
+            "amount_duration_type": "yearly",
+            "allow_joint": 0
+          }
+        ],
+        "utilities": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "expense_type": "utilities",
+            "other_type_name": null,
+            "amount": 1,
+            "amount_duration_type": "monthly",
+            "allow_joint": 0
+          }
+        ],
+        "discretionary": [
+          {
+            "id": 6,
+            "consumer_id": 1,
+            "expense_type": "discretionary",
+            "other_type_name": null,
+            "amount": 1,
+            "amount_duration_type": "weekly",
+            "allow_joint": 0
+          }
+        ],
+        "insurance": [
+          {
+            "id": 2,
+            "consumer_id": 1,
+            "expense_type": "insurance",
+            "other_type_name": null,
+            "amount": 1,
+            "amount_duration_type": "weekly",
+            "allow_joint": 0
+          }
+        ],
+        "education": [
+          {
+            "id": 7,
+            "consumer_id": 1,
+            "expense_type": "education",
+            "other_type_name": null,
+            "amount": 1,
+            "amount_duration_type": "weekly",
+            "allow_joint": 0
+          }
+        ],
+        "health": [
+          {
+            "id": 8,
+            "consumer_id": 1,
+            "expense_type": "health",
+            "other_type_name": null,
+            "amount": 1,
+            "amount_duration_type": "weekly",
+            "allow_joint": 0
+          }
+        ],
+        "transport": [
+          {
+            "id": 9,
+            "consumer_id": 1,
+            "expense_type": "transport",
+            "other_type_name": null,
+            "amount": 1,
+            "amount_duration_type": "weekly",
+            "allow_joint": 0
+          }
+        ],
+        "property": [
+          {
+            "id": 10,
+            "consumer_id": 1,
+            "expense_type": "property",
+            "other_type_name": null,
+            "amount": 1,
+            "amount_duration_type": "weekly",
+            "allow_joint": 0
+          }
+        ],
+        "other": [
+          {
+            "id": 11,
+            "consumer_id": 1,
+            "expense_type": "other",
+            "other_type_name": "Other",
+            "amount": 1,
+            "amount_duration_type": "weekly",
+            "allow_joint": 0
+          }
+        ],
+        "property_loan": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "address": "1 Infinite Loop, Cupertino, CA 95014, USA",
+            "property_type": "owner",
+            "market_value": 1,
+            "loan_balance": 1,
+            "loan_repayments": 1,
+            "loan_repayment_duration_type": "weekly",
+            "income_from_property": 1,
+            "income_from_property_duration_type": "weekly",
+            "is_property_as_investment": 1,
+            "is_property_be_sold": 0,
+            "allow_joint": 0,
+            "is_current_address": 1
+          }
+        ],
+        "vehicle_loan": [],
+        "kiwisaver": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "provider": "Fund Builder",
+            "value": 1,
+            "regular_contribution": 1,
+            "regular_contribution_duration_type": "weekly"
+          }
+        ],
+        "student_loan": [
+          {
+            "id": 7,
+            "consumer_id": 1,
+            "liability_type": "student_loan",
+            "provider": null,
+            "description": null,
+            "limit": 0,
+            "balance": 1,
+            "minimum_monthly_repayment": 0,
+            "repayment_by_payslip": 1,
+            "repayment_by_payslip_duration_type": "weekly",
+            "allow_joint": 0
+          }
+        ],
+        "credit_card": [
+          {
+            "id": 2,
+            "consumer_id": 1,
+            "liability_type": "credit_card",
+            "provider": "Bank",
+            "description": null,
+            "limit": 1,
+            "balance": 1,
+            "minimum_monthly_repayment": 1,
+            "repayment_by_payslip": 0,
+            "repayment_by_payslip_duration_type": null,
+            "allow_joint": 0
+          }
+        ],
+        "overdraft": [
+          {
+            "id": 3,
+            "consumer_id": 1,
+            "liability_type": "overdraft",
+            "provider": "Other Bank",
+            "description": null,
+            "limit": 1,
+            "balance": 1,
+            "minimum_monthly_repayment": 1,
+            "repayment_by_payslip": 0,
+            "repayment_by_payslip_duration_type": null,
+            "allow_joint": 1
+          }
+        ],
+        "personal_loan": [
+          {
+            "id": 5,
+            "consumer_id": 1,
+            "liability_type": "personal_loan",
+            "provider": "Bank",
+            "description": null,
+            "limit": 0,
+            "balance": 1,
+            "minimum_monthly_repayment": 1,
+            "repayment_by_payslip": 0,
+            "repayment_by_payslip_duration_type": "monthly",
+            "allow_joint": 0
+          }
+        ]
+      },
+      "joint": {
+        "living": [],
+        "utilities": [
+          {
+            "id": 3,
+            "consumer_id": 2,
+            "expense_type": "utilities",
+            "other_type_name": null,
+            "amount": 1,
+            "amount_duration_type": "monthly",
+            "allow_joint": 0
+          }
+        ],
+        "discretionary": [],
+        "insurance": [],
+        "education": [],
+        "health": [],
+        "transport": [],
+        "property": [],
+        "other": [],
+        "property_loan": [],
+        "vehicle_loan": [],
+        "kiwisaver": [],
+        "student_loan": [
+          {
+            "id": 1,
+            "consumer_id": 2,
+            "liability_type": "student_loan",
+            "provider": null,
+            "description": null,
+            "limit": 0,
+            "balance": 1,
+            "minimum_monthly_repayment": 0,
+            "repayment_by_payslip": 1,
+            "repayment_by_payslip_duration_type": "monthly",
+            "allow_joint": 0
+          }
+        ],
+        "credit_card": [],
+        "overdraft": [
+          {
+            "id": 3,
+            "consumer_id": 1,
+            "liability_type": "overdraft",
+            "provider": "Other Bank",
+            "description": null,
+            "limit": 1,
+            "balance": 1,
+            "minimum_monthly_repayment": 1,
+            "repayment_by_payslip": 0,
+            "repayment_by_payslip_duration_type": null,
+            "allow_joint": 1
+          }
+        ],
+        "personal_loan": []
+      }
+    },
+    "assets": {
+      "main": {
+        "properties": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "address": "1 Infinite Loop, Cupertino, CA 95014, USA",
+            "property_type": "owner",
+            "market_value": 1,
+            "loan_balance": 1,
+            "loan_repayments": 1,
+            "loan_repayment_duration_type": "weekly",
+            "income_from_property": 1,
+            "income_from_property_duration_type": "weekly",
+            "is_property_as_investment": 1,
+            "is_property_be_sold": 0,
+            "allow_joint": 0,
+            "is_current_address": 1
+          }
+        ],
+        "bank_accounts": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "bank": "Bank",
+            "account_type": "transaction",
+            "account_number": "1",
+            "years_with_bank": 1,
+            "current_balance": 1,
+            "allow_joint": 0
+          }
+        ],
+        "vehicles": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "license": "1",
+            "make_and_model": "1",
+            "year": 2008,
+            "value": 1,
+            "loan_balance": 0,
+            "loan_repayments": 0,
+            "loan_repayment_duration_type": "weekly",
+            "allow_joint": 1,
+            "vehicle_financed": 0
+          },
+          {
+            "id": 3,
+            "consumer_id": 1,
+            "license": "VR001",
+            "make_and_model": "Nissan",
+            "year": 2008,
+            "value": 1,
+            "loan_balance": 1,
+            "loan_repayments": 0,
+            "loan_repayment_duration_type": "monthly",
+            "allow_joint": 0,
+            "vehicle_financed": 0
+          },
+          {
+            "id": 6,
+            "consumer_id": 1,
+            "license": "VR002",
+            "make_and_model": "Nissan",
+            "year": 2008,
+            "value": 1,
+            "loan_balance": 1,
+            "loan_repayments": 0,
+            "loan_repayment_duration_type": "monthly",
+            "allow_joint": 0,
+            "vehicle_financed": 0
+          }
+        ],
+        "kiwisavers": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "provider": "Fund Builder",
+            "value": 1,
+            "regular_contribution": 1,
+            "regular_contribution_duration_type": "weekly"
+          }
+        ],
+        "home_contents": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "value": 1,
+            "allow_joint": 0
+          }
+        ],
+        "saving_investments": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "description": "Investments",
+            "value": 1,
+            "allow_joint": 0
+          }
+        ],
+        "others": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "description": "Other",
+            "value": 1,
+            "allow_joint": 0
+          }
+        ]
+      },
+      "joint": {
+        "properties": [],
+        "bank_accounts": [],
+        "vehicles": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "license": "1",
+            "make_and_model": "1",
+            "year": 2008,
+            "value": 1,
+            "loan_balance": 0,
+            "loan_repayments": 0,
+            "loan_repayment_duration_type": "weekly",
+            "allow_joint": 1,
+            "vehicle_financed": 0
+          }
+        ],
+        "kiwisavers": [],
+        "home_contents": [],
+        "saving_investments": [
+          {
+            "id": 2,
+            "consumer_id": 2,
+            "description": "Savings",
+            "value": 1,
+            "allow_joint": 0
+          }
+        ],
+        "others": []
+      }
+    },
+    "liabilities": {
+      "main": {
+        "student_loan": [
+          {
+            "id": 7,
+            "consumer_id": 1,
+            "liability_type": "student_loan",
+            "provider": null,
+            "description": null,
+            "limit": 0,
+            "balance": 1,
+            "minimum_monthly_repayment": 0,
+            "repayment_by_payslip": 1,
+            "repayment_by_payslip_duration_type": "weekly",
+            "allow_joint": 0
+          }
+        ],
+        "credit_card": [
+          {
+            "id": 2,
+            "consumer_id": 1,
+            "liability_type": "credit_card",
+            "provider": "Bank",
+            "description": null,
+            "limit": 1,
+            "balance": 1,
+            "minimum_monthly_repayment": 1,
+            "repayment_by_payslip": 0,
+            "repayment_by_payslip_duration_type": null,
+            "allow_joint": 0
+          }
+        ],
+        "overdraft": [
+          {
+            "id": 3,
+            "consumer_id": 1,
+            "liability_type": "overdraft",
+            "provider": "Other Bank",
+            "description": null,
+            "limit": 1,
+            "balance": 1,
+            "minimum_monthly_repayment": 1,
+            "repayment_by_payslip": 0,
+            "repayment_by_payslip_duration_type": null,
+            "allow_joint": 1
+          }
+        ],
+        "personal_loan": [
+          {
+            "id": 5,
+            "consumer_id": 1,
+            "liability_type": "personal_loan",
+            "provider": "Bank",
+            "description": null,
+            "limit": 0,
+            "balance": 1,
+            "minimum_monthly_repayment": 1,
+            "repayment_by_payslip": 0,
+            "repayment_by_payslip_duration_type": "monthly",
+            "allow_joint": 0
+          }
+        ],
+        "other": [
+          {
+            "id": 6,
+            "consumer_id": 1,
+            "liability_type": "other",
+            "provider": null,
+            "description": "Friend",
+            "limit": 0,
+            "balance": 1,
+            "minimum_monthly_repayment": 0,
+            "repayment_by_payslip": 0,
+            "repayment_by_payslip_duration_type": null,
+            "allow_joint": 0
+          }
+        ],
+        "properties": [
+          {
+            "id": 1,
+            "consumer_id": 1,
+            "address": "1 Infinite Loop, Cupertino, CA 95014, USA",
+            "property_type": "owner",
+            "market_value": 1,
+            "loan_balance": 1,
+            "loan_repayments": 1,
+            "loan_repayment_duration_type": "weekly",
+            "income_from_property": 1,
+            "income_from_property_duration_type": "weekly",
+            "is_property_as_investment": 1,
+            "is_property_be_sold": 0,
+            "allow_joint": 0,
+            "is_current_address": 1
+          }
+        ],
+        "vehicles": []
+      },
+      "joint": {
+        "student_loan": [
+          {
+            "id": 1,
+            "consumer_id": 2,
+            "liability_type": "student_loan",
+            "provider": null,
+            "description": null,
+            "limit": 0,
+            "balance": 1,
+            "minimum_monthly_repayment": 0,
+            "repayment_by_payslip": 1,
+            "repayment_by_payslip_duration_type": "monthly",
+            "allow_joint": 0
+          }
+        ],
+        "credit_card": [],
+        "overdraft": [
+          {
+            "id": 3,
+            "consumer_id": 1,
+            "liability_type": "overdraft",
+            "provider": "Other Bank",
+            "description": null,
+            "limit": 1,
+            "balance": 1,
+            "minimum_monthly_repayment": 1,
+            "repayment_by_payslip": 0,
+            "repayment_by_payslip_duration_type": null,
+            "allow_joint": 1
+          }
+        ],
+        "personal_loan": [],
+        "other": [],
+        "properties": [],
+        "vehicles": []
+      }
+    },
+    "loan_type": null,
+    "is_pre_approval": 0,
+    "status": "sop_completed",
+    "loan_info": [],
+    "applied_banks": [],
+    "current_step": "statement-of-position",
+    "step_statuses": {
+      "details": 2,
+      "incomes": 2,
+      "expenses": 2,
+      "assets": 2,
+      "liabilities": 2,
+      "bank-page": true,
+      "loan-info-page": true,
+      "statement-of-position": false
+    },
+    "my_money_map": {
+      "income": {
+        "weekly": "$1",
+        "monthly": "$5",
+        "yearly": "$59"
+      },
+      "expenses": {
+        "weekly": "$11",
+        "monthly": "$50",
+        "yearly": "$594"
+      },
+      "assets": "$10",
+      "liabilities": "$9",
+      "income_less_expenses": {
+        "weekly": "$-10",
+        "monthly": "$-45",
+        "yearly": "$-535"
+      },
+      "assets_less_liabilities": "$1"
+    },
+    "download_sop": {
+      "incomes": {
+        "main": [
+          {
+            "frequency": "yearly",
+            "value": "$1.00",
+            "text": "Sole Trader Income"
+          },
+          {
+            "frequency": "weekly",
+            "value": "$1.00",
+            "text": "Property Income"
+          },
+          {
+            "frequency": "yearly",
+            "value": "$1.00",
+            "text": "Other"
+          }
+        ]
+      },
+      "business_incomes": {
+        "main": [
+          {
+            "frequency": "yearly",
+            "value": "$1.00",
+            "text": "JD Business"
+          }
+        ]
+      },
+      "properties": [
+        {
+          "value": "$1.00",
+          "gross_income": "$1.00",
+          "frequency": "weekly",
+          "property_type": "owner",
+          "address": "1 Infinite Loop, Cupertino, CA 95014, USA"
+        }
+      ],
+      "other_assets": [
+        {
+          "label": "Bank Accounts & Balances",
+          "value": "$1.00"
+        },
+        {
+          "label": "Vehicles",
+          "value": "$3.00"
+        },
+        {
+          "label": "Kiwisaver & Superannuation",
+          "value": "$1.00"
+        },
+        {
+          "label": "Home Content & Valuables",
+          "value": "$1.00"
+        },
+        {
+          "label": "Saving & Investments",
+          "value": "$2.00"
+        },
+        {
+          "label": "Other Assets",
+          "value": "$1.00"
+        }
+      ],
+      "property_loans": [
+        {
+          "balance": "$1.00",
+          "repayment": "$1.00",
+          "frequency": "weekly"
+        }
+      ],
+      "other_loans": {
+        "student_loan": {
+          "balance": "$2.00",
+          "repayment": "$0.00",
+          "frequency": "monthly",
+          "limit": "$0.00",
+          "provider": "",
+          "label": "Student loan"
+        },
+        "credit_card": {
+          "balance": "$1.00",
+          "repayment": "$1.00",
+          "frequency": "monthly",
+          "limit": "$1.00",
+          "provider": "Bank",
+          "label": "Credit \/ Store Card"
+        },
+        "overdraft": {
+          "balance": "$1.00",
+          "repayment": "$1.00",
+          "frequency": "monthly",
+          "limit": "$1.00",
+          "provider": "Other Bank",
+          "label": "Overdraft"
+        },
+        "vehicle_loan": {
+          "balance": "$0.00",
+          "repayment": "$0.00",
+          "frequency": "",
+          "limit": "$0.00",
+          "provider": "",
+          "label": "Vehicle loan"
+        },
+        "personal_loan": {
+          "balance": "$1.00",
+          "repayment": "$1.00",
+          "frequency": "monthly",
+          "limit": "$0.00",
+          "provider": "Bank",
+          "label": "Personal Loan"
+        },
+        "other": {
+          "balance": "$1.00",
+          "repayment": "$0.00",
+          "frequency": "monthly",
+          "limit": "$0.00",
+          "provider": "",
+          "label": "Other Liabilities"
+        }
+      },
+      "expenses": [
+        {
+          "label": "Living Expenses",
+          "value": "$1.00",
+          "frequency": "yearly"
+        },
+        {
+          "label": "Utilities",
+          "value": "$24.00",
+          "frequency": "monthly"
+        },
+        {
+          "label": "Discretionary, Entertainment",
+          "value": "$52.00",
+          "frequency": "weekly"
+        },
+        {
+          "label": "Insurance",
+          "value": "$52.00",
+          "frequency": "weekly"
+        },
+        {
+          "label": "Education, Childcare, Child Support",
+          "value": "$52.00",
+          "frequency": "weekly"
+        },
+        {
+          "label": "Health & Wellness",
+          "value": "$52.00",
+          "frequency": "weekly"
+        },
+        {
+          "label": "Transport",
+          "value": "$52.00",
+          "frequency": "weekly"
+        },
+        {
+          "label": "Property",
+          "value": "$52.00",
+          "frequency": "weekly"
+        },
+        {
+          "label": "Other",
+          "value": "$52.00",
+          "frequency": "weekly"
+        },
+        {
+          "label": "Property Loan Repayments",
+          "value": "$52.00",
+          "frequency": "weekly"
+        },
+        {
+          "label": "Vehicle Loan Repayments",
+          "value": "$0.00",
+          "frequency": "monthly"
+        },
+        {
+          "label": "Kiwisaver & Superannuation",
+          "value": "$52.00",
+          "frequency": "weekly"
+        },
+        {
+          "label": "Student loan",
+          "value": "$64.00",
+          "frequency": "weekly"
+        },
+        {
+          "label": "Credit \/ Store Card",
+          "value": "$0.00",
+          "frequency": null
+        },
+        {
+          "label": "Overdraft",
+          "value": "$0.00",
+          "frequency": null
+        },
+        {
+          "label": "Personal Loan",
+          "value": "$0.00",
+          "frequency": "monthly"
+        }
+      ]
+    },
+    "offers_cnt": 0
+  }
+}
