@@ -9,6 +9,19 @@
 </head>
 
 <body>
+@php
+        $application = $data['data']['application'];
+        $consumer = $data['data']['application']['consumer'];
+        $joint_applicant =  $data['data']['application']['joint_applicant'];
+        $dependents =  $data['data']['application']['dependents'];
+        $incomes =  $data['data']['application']['incomes'];
+        $expenses =  $data['data']['application']['expenses'];
+        $assets =  $data['data']['application']['assets'];
+        $liabilities =  $data['data']['application']['liabilities'];
+        $step_statuses =  $data['data']['application']['step_statuses'];
+        $my_money_map =  $data['data']['application']['my_money_map'];
+        $download_sop =  $data['data']['application']['download_sop'];
+    @endphp
   <div class="page-bnz__wrapper">
     <!-- page 1 -->
     <div class="page-bnz">
@@ -57,9 +70,7 @@
                         </div>
                       </div>
                     </div>
-                    @php
-                    $application =  $data['data']['application']
-                    @endphp
+
                     <div>
                       <p><strong>Name</strong></p>
                       <div class="bnz-box__input-wrapper" style="border-bottom: none;">
@@ -134,7 +145,7 @@
                       <div class="bnz-box__input-wrapper" style="border-bottom: none;">
                         <label class="bnz-input__label">First</label>
                         <div class="flex__1">
-                          <input class="bnz-input__input" type="text" name="">
+                          <input class="bnz-input__input" type="text" name="" value="{{$consumer['first_name']}}">
                         </div>
                       </div>
                       <div class="bnz-box__input-wrapper" style="border-bottom: none;">
@@ -146,7 +157,7 @@
                       <div class="bnz-box__input-wrapper">
                         <label class="bnz-input__label">Last</label>
                         <div class="flex__1">
-                          <input class="bnz-input__input" type="text" name="">
+                          <input class="bnz-input__input" type="text" name=""  value="{{$consumer['last_name']}}">
                         </div>
                       </div>
                     </div>
@@ -154,7 +165,7 @@
                     <div class="bnz-input__wrapper pt__1">
                       <label class=""><strong>Email address*</strong></label>
                       <div class="">
-                        <input class="bnz-input__input-full" type="text" name="">
+                        <input class="bnz-input__input-full" type="text" name=""  value="{{$consumer['email']}}">
                       </div>
                     </div>
 
@@ -162,7 +173,7 @@
                       <div class="bnz-input__wrapper w-[38%] flex-none">
                         <label class="text-[9px] leading-[20px]">Number of dependants in your care</label>
                         <div class="">
-                          <input class="bnz-input__input-full" type="text" name="">
+                          <input class="bnz-input__input-full" type="text" name=""  value="{{ count($application['dependents']) }}">
                         </div>
                       </div>
                       <div class="flex-1 pl-4 pt-1">
@@ -225,7 +236,7 @@
                         <div class="bnz-input__checkbox-wrapper">
                           <div class="bnz-input__checkbox-group">
                             <label class="bnz-input__checkbox-label">Male
-                              <input class="bnz-input__checkbox-input" type="checkbox">
+                              <input class="bnz-input__checkbox-input" type="checkbox" checked>
                               <span class="bnz-input__checkmark"></span>
                             </label>
                           </div>
