@@ -9,6 +9,19 @@
 </head>
 
 <body>
+@php
+        $application = $data['data']['application'];
+        $consumer = $data['data']['application']['consumer'];
+        $joint_applicant =  $data['data']['application']['joint_applicant'];
+        $dependents =  $data['data']['application']['dependents'];
+        $incomes =  $data['data']['application']['incomes'];
+        $expenses =  $data['data']['application']['expenses'];
+        $assets =  $data['data']['application']['assets'];
+        $liabilities =  $data['data']['application']['liabilities'];
+        $step_statuses =  $data['data']['application']['step_statuses'];
+        $my_money_map =  $data['data']['application']['my_money_map'];
+        $download_sop =  $data['data']['application']['download_sop'];
+    @endphp
   <div class="page-asb__wrapper">
     <!-- page 1 -->
     <div class="page-asb">
@@ -91,7 +104,7 @@
                       <p>Title</p>
                       <div class="box__flex">
                         <div class="asb-input__col-box mr__1">
-                          <input class="asb-form__input asb-input__col-1" type="text" name="" placeholder="Mr">
+                          <input class="asb-form__input asb-input__col-1" value="{{ $application['consumer']['first_name'] }}" type="text" name="" placeholder="Mr">
                         </div>
                         <div class="asb-input__col-box mr__1">
                           <input class="asb-form__input asb-input__col-28px" type="text" name="" placeholder="Mrs">
@@ -115,14 +128,14 @@
                   <div class="pt__2">
                     <p>Surname</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" value="{{ $application['consumer']['last_name'] }}" type="text" name="">
                     </div>
                   </div>
 
                   <div class="pt__2">
                     <p>First Names</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value="{{ $application['consumer']['first_name'] }}">
                     </div>
                   </div>
 
@@ -130,7 +143,7 @@
                     <label for="">Date of Birth</label>
                     <div>
                       <div class="asb-input__col-box box-inline">
-                        <input class="asb-form__input asb-input__col-8" type="text" name="" placeholder="DDMMYYYY">
+                        <input class="asb-form__input asb-input__col-8" type="text" name="" placeholder="DDMMYYYY" value="{{ $application['consumer']['dob'] }}">
                         <div>
                           <span class="asb-input-box asb-input-box-1"></span>
                           <span class="asb-input-box asb-input-box-2"></span>
@@ -147,7 +160,8 @@
                   <div class="pt__2">
                     <p>Number of dependants and ages</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value="{{ count($application['dependents']) }}">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value="{{ count($application['dependents']) }}">
                     </div>
                   </div>
 
@@ -155,14 +169,17 @@
                     <p>Home address (if less than 12 months please provide previous address)</p>
                     <div class="asb-input__col-box">
                       <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"
+                      value="{{ $application['consumer']['current_address']['value'] }}"
                         name="">
                     </div>
                     <div class="asb-input__col-box">
                       <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"
+                      value="{{ $application['consumer']['current_address']['value'] }}"
                         name="">
                     </div>
                     <div class="asb-input__col-box">
                       <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"
+                      value="{{ $application['consumer']['current_address']['value'] }}"
                         name="">
                     </div>
                     <div class="page-asb__cols-10 page-asb__border">
@@ -182,7 +199,7 @@
                             <p class="leading-[24px]">Duration at address:</p>
                           </div>
                           <div class="flex__1">
-                            <input class="asb-form__input-noborder" type="text" name="">
+                            <input class="asb-form__input-noborder" type="text" name=""   value="{{ $application['consumer']['current_address']['duration'] }}">
                           </div>
                         </div>
                       </div>
@@ -192,15 +209,15 @@
                   <div class="pt__2">
                     <p>Previous address</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"
+                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"   value="{{ $application['consumer']['previous_address']['value'] }}"
                         name="">
                     </div>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"
+                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"   value="{{ $application['consumer']['previous_address']['value'] }}"
                         name="">
                     </div>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"
+                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"  value="{{ $application['consumer']['previous_address']['value'] }}"
                         name="">
                     </div>
                     <div class="page-asb__cols-10 page-asb__border">
@@ -220,7 +237,7 @@
                             <p class="leading-[24px]">Duration at address:</p>
                           </div>
                           <div class="flex__1">
-                            <input class="asb-form__input-noborder" type="text" name="">
+                            <input class="asb-form__input-noborder" type="text" name=""  value="{{ $application['consumer']['previous_address']['duration'] }}">
                           </div>
                         </div>
                       </div>
@@ -232,7 +249,7 @@
                       <div class="">
                         <p>Telephone home</p>
                         <div class="asb-input__col-box">
-                          <input class="asb-form__input asb-form__input-full" type="text" name="">
+                          <input class="asb-form__input asb-form__input-full" type="text" name=""  value="{{ $application['consumer']['phone'] }}">
                         </div>
                       </div>
                     </div><!-- end page-asb__col-1/2 -->
@@ -249,28 +266,34 @@
                   <div class="pt__2">
                     <p>Mobile</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name=""value="{{ $application['consumer']['phone'] }}">
                     </div>
                   </div>
 
                   <div class="pt__2">
                     <p>Email</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name=""value="{{ $application['consumer']['email'] }}">
                     </div>
                   </div>
 
                   <div class="pt__2">
                     <p>Occupation</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      @foreach($incomes['main']['salary_incomes'] as $salary )
+
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value= "{{$salary['occupation']}}" >
+                      @endforeach
                     </div>
                   </div>
 
                   <div class="pt__2">
                     <p>Employer (if applicable)</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                    @foreach($incomes['main']['salary_incomes'] as $salary )
+
+                    <input class="asb-form__input asb-form__input-full" type="text" name="" value= "{{$salary['employer']}}" >
+                    @endforeach
                     </div>
                   </div>
                 </div><!-- end page-asb__col-1/2 -->
@@ -282,16 +305,16 @@
                       <p>Title</p>
                       <div class="box__flex">
                         <div class="asb-input__col-box mr__1">
-                          <input class="asb-form__input asb-input__col-1" type="text" name="" placeholder="Mr">
+                          <input class="asb-form__input asb-input__col-1" type="text" name="" value = "{{$joint_applicant['first_name']}}" placeholder="Mr">
                         </div>
                         <div class="asb-input__col-box mr__1">
-                          <input class="asb-form__input asb-input__col-28px" type="text" name="" placeholder="Mrs">
+                          <input class="asb-form__input asb-input__col-28px" type="text" name="" placeholder="Mrs" >
                         </div>
                         <div class="asb-input__col-box mr__1">
-                          <input class="asb-form__input asb-input__col-28px" type="text" name="" placeholder="Miss">
+                          <input class="asb-form__input asb-input__col-28px" type="text" name="" placeholder="Miss" >
                         </div>
                         <div class="asb-input__col-box mr__1">
-                          <input class="asb-form__input asb-input__col-1" type="text" name="" placeholder="Ms">
+                          <input class="asb-form__input asb-input__col-1" type="text" name="" placeholder="Ms" >
                         </div>
                       </div>
                     </div>
@@ -306,14 +329,14 @@
                   <div class="pt__2">
                     <p>Surname</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value = "{{$joint_applicant['last_name']}}">
                     </div>
                   </div>
 
                   <div class="pt__2">
                     <p>First Names</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value = "{{$joint_applicant['first_name']}}">
                     </div>
                   </div>
 
@@ -321,7 +344,7 @@
                     <label for="">Date of Birth</label>
                     <div>
                       <div class="asb-input__col-box box-inline">
-                        <input class="asb-form__input asb-input__col-8" type="text" name="" placeholder="DDMMYYYY">
+                        <input class="asb-form__input asb-input__col-8" type="text" name="" placeholder="DDMMYYYY" value = "{{$joint_applicant['dob']}}">
                         <div>
                           <span class="asb-input-box asb-input-box-1"></span>
                           <span class="asb-input-box asb-input-box-2"></span>
@@ -338,22 +361,22 @@
                   <div class="pt__2">
                     <p>Number of dependants and ages</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value="{{count($joint_applicant['dependents']) }}">
                     </div>
                   </div>
 
                   <div class="pt__2">
                     <p>Home address (if less than 12 months please provide previous address)</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"
+                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text" value = "{{$joint_applicant['current_address']['value']}}"
                         name="">
                     </div>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"
+                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"  value = "{{$joint_applicant['current_address']['value']}}"
                         name="">
                     </div>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"
+                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"  value = "{{$joint_applicant['current_address']['value']}}"
                         name="">
                     </div>
                     <div class="page-asb__cols-10 page-asb__border">
@@ -373,7 +396,7 @@
                             <p class="leading-[24px]">Duration at address:</p>
                           </div>
                           <div class="flex__1">
-                            <input class="asb-form__input-noborder" type="text" name="">
+                            <input class="asb-form__input-noborder" type="text" name=""  value = "{{$joint_applicant['current_address']['duration']}}">
                           </div>
                         </div>
                       </div>
@@ -383,15 +406,15 @@
                   <div class="pt__2">
                     <p>Previous address</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"
+                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text" value = "{{$joint_applicant['previous_address'] ? $joint_applicant['previous_address']['value'] : 'N/A'}}"
                         name="">
                     </div>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"
+                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"  value = "{{$joint_applicant['previous_address'] ? $joint_applicant['previous_address']['value'] : 'N/A'}}"
                         name="">
                     </div>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"
+                      <input class="asb-form__input asb-form__input-full" style="border-bottom: none;" type="text"  value = "{{$joint_applicant['previous_address'] ? $joint_applicant['previous_address']['value'] : 'N/A'}}"
                         name="">
                     </div>
                     <div class="page-asb__cols-10 page-asb__border">
@@ -401,7 +424,7 @@
                             <p class="leading-[24px]">Postcode:</p>
                           </div>
                           <div class="flex-none">
-                            <input class="asb-form__input-noborder" type="text" name="">
+                            <input class="asb-form__input-noborder" type="text" name="" value = "{{$joint_applicant['previous_address'] ? $joint_applicant['postal_code']: 'N/A'}}">
                           </div>
                         </div>
                       </div>
@@ -411,7 +434,8 @@
                             <p class="leading-[24px]">Duration at address:</p>
                           </div>
                           <div class="flex__1">
-                            <input class="asb-form__input-noborder" type="text" name="">
+                            <input class="asb-form__input-noborder" type="text" name=""
+                            value = "{{$joint_applicant['previous_address'] ? $joint_applicant['previous_address']['duration'] : 'N/A'}}">
                           </div>
                         </div>
                       </div>
@@ -423,7 +447,7 @@
                       <div class="">
                         <p>Telephone home</p>
                         <div class="asb-input__col-box">
-                          <input class="asb-form__input asb-form__input-full" type="text" name="">
+                          <input class="asb-form__input asb-form__input-full" type="text" name=""  value = "{{$joint_applicant['phone'] ? $joint_applicant['phone'] : ''}}">
                         </div>
                       </div>
                     </div><!-- end page-asb__col-1/2 -->
@@ -440,28 +464,36 @@
                   <div class="pt__2">
                     <p>Mobile</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value = "{{$joint_applicant['phone'] ? $joint_applicant['phone'] : ''}}">
                     </div>
                   </div>
 
                   <div class="pt__2">
                     <p>Email</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value = "{{$joint_applicant['phone'] ? $joint_applicant['email'] : ''}}">
                     </div>
                   </div>
 
                   <div class="pt__2">
                     <p>Occupation</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                    @foreach($incomes['joint']['salary_incomes'] as $salary )
+
+                    <input class="asb-form__input asb-form__input-full" type="text" name="" value= "{{$salary['occupation']}}" >
+                    @endforeach
+
                     </div>
                   </div>
 
                   <div class="pt__2">
                     <p>Employer (if applicable)</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                    @foreach($incomes['joint']['salary_incomes'] as $salary )
+
+              <input class="asb-form__input asb-form__input-full" type="text" name="" value= "{{$salary['employer']}}" >
+              @endforeach
+
                     </div>
                   </div>
                 </div>
@@ -499,7 +531,7 @@
                   <div class="pt__2">
                     <p>Type of residence</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="" placeholder="Other">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" placeholder="Other" value="{{$consumer['current_address']['own_property'] == 1 ? 'own proporty' : 'Rented'}}">
                     </div>
                   </div>
 
@@ -529,7 +561,7 @@
                   <div class="pt__2">
                     <p>Country(s) of Citizenship</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value="{{$consumer['current_address']['own_property'] == 1 ? 'own proporty' : 'Rented'}}">
                     </div>
                   </div>
                 </div>
@@ -1481,7 +1513,7 @@
                   <div class="pt__2">
                     <p>Joint Applicant's Name(please print)</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value="{{$consumer['first_name']}}">
                     </div>
                   </div>
                   <div class="pt__2">
@@ -1495,7 +1527,7 @@
                     <label for="">Date</label>
                     <div>
                       <div class="asb-input__col-box box-inline">
-                        <input class="asb-form__input asb-input__col-8" type="text" name="" placeholder="DDMMYYYY">
+                        <input class="asb-form__input asb-input__col-8" type="text" name="" placeholder="DDMMYYYY" value ="{{now()}}">
                         <div>
                           <span class="asb-input-box asb-input-box-1"></span>
                           <span class="asb-input-box asb-input-box-2"></span>
@@ -1511,13 +1543,13 @@
                   <div class="pt__2">
                     <p>Primary ID</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value = "{{$consumer['id']}}">
                     </div>
                   </div>
                   <div class="pt__2">
                     <p>Secondary ID</p>
                     <div class="asb-input__col-box">
-                      <input class="asb-form__input asb-form__input-full" type="text" name="">
+                      <input class="asb-form__input asb-form__input-full" type="text" name="" value ="{{$application['uuid']}}">
                     </div>
                   </div>
                 </div>
