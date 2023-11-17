@@ -110,7 +110,9 @@
                                                         </div>
                                                 </div>
                                         </div>
-
+                                        @php
+                    $application =  $data['data']['application']
+                    @endphp
                                         <div class="page-anz__form-input">
                                                 <label class="anz-form__label anz-form__label-sm">First name</label>
                                                 <div class="anz-form__label-md">

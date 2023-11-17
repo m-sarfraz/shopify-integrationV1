@@ -9,6 +9,9 @@
 </head>
 
 <body>
+@php
+                    $application =  $data['data']['application']
+                    @endphp
 <div class="page-anz__wrapper">
     <!-- page 1 -->
     <div class="page-anz">
@@ -49,7 +52,7 @@
                             <div class="box__flex pt__1">
                                 <label class="pr__1">Title: Mr/Mrs/Ms/Miss/Dr/Other</label>
                                 <div class="flex__1">
-                                    <input class="anz-hl-form__input-dashed" type="text" name="">
+                                    <input class="anz-hl-form__input-dashed"         type="text" name="">
                                 </div>
                             </div>
 
@@ -152,7 +155,8 @@
                                 <div class="anz-input__checkbox-flex">
                                     <div class="anz-input__checkbox-group">
                                         <label class="anz-input__checkbox-label">Own home (with home loan)
-                                            <input class="anz-input__checkbox-input" type="checkbox">
+                                            <input class="anz-input__checkbox-input" type="checkbox"
+                                            {{$application['consumer']['current_address']['own_property'] == 1 ? 'checked' : ''}}>
                                             <span class="anz-input__checkmark"></span>
                                         </label>
                                     </div>

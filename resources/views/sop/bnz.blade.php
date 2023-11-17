@@ -57,13 +57,16 @@
                         </div>
                       </div>
                     </div>
-
+                    @php
+                    $application =  $data['data']['application']
+                    @endphp
                     <div>
                       <p><strong>Name</strong></p>
                       <div class="bnz-box__input-wrapper" style="border-bottom: none;">
                         <label class="bnz-input__label">First</label>
                         <div class="flex__1">
-                          <input class="bnz-input__input" type="text" name="">
+                          <input class="bnz-input__input" type="text" name="" value="{{$application['consumer']['first_name']}}">
+
                         </div>
                       </div>
                       <div class="bnz-box__input-wrapper" style="border-bottom: none;">
@@ -75,7 +78,7 @@
                       <div class="bnz-box__input-wrapper">
                         <label class="bnz-input__label">Last</label>
                         <div class="flex__1">
-                          <input class="bnz-input__input" type="text" name="">
+                          <input class="bnz-input__input" type="text" name="" value="{{$application['consumer']['last_name']}}">
                         </div>
                       </div>
                     </div>
@@ -83,7 +86,7 @@
                     <div class="bnz-input__wrapper pt__1">
                       <label class=""><strong>Email address*</strong></label>
                       <div class="">
-                        <input class="bnz-input__input-full" type="text" name="">
+                        <input class="bnz-input__input-full" type="text" name="" value="{{$application['consumer']['email']}}">
                       </div>
                     </div>
 
