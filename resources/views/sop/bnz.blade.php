@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BNZ</title>
-  <link rel="stylesheet" href="{{ asset('css/sop/bnz.blade.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/sop/bnz.blade.css') }}">
 </head>
 
 <body>

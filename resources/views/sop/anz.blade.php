@@ -5,11 +5,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>ANZ Statement of Position</title>
-        <link rel="stylesheet" href="{{ asset('css/sop/anz.blade.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/sop/anz.blade.css') }}">
 </head>
 
 <body>
 <div class="page-anz__wrapper">
+@php
+        $application = $data['data']['application'];
+        $consumer = $data['data']['application']['consumer'];
+        $joint_applicant =  $data['data']['application']['joint_applicant'];
+        $dependents =  $data['data']['application']['dependents'];
+        $incomes =  $data['data']['application']['incomes'];
+        $expenses =  $data['data']['application']['expenses'];
+        $assets =  $data['data']['application']['assets'];
+        $liabilities =  $data['data']['application']['liabilities'];
+        $step_statuses =  $data['data']['application']['step_statuses'];
+        $my_money_map =  $data['data']['application']['my_money_map'];
+        $download_sop =  $data['data']['application']['download_sop'];
+    @endphp
         <div class="page-anz">
                 <header class="page-anz__header">
                         <div class="page-anz__title-col">
@@ -25,19 +38,22 @@
                                         <div class="page-anz__form-input">
                                                 <label class="anz-form__label flex-none w-[50px]" for="fdate">As at:</label>
                                                 <div class="anz-input__col-box">
-                                                        <input class="anz-form__input anz-input__col-2" type="text" id="fdate" name="fdate" placeholder="DD">
+                                                        <input class="anz-form__input anz-input__col-2" type="text" id="fdate" name="fdate" placeholder="DD"
+                                                        value="{{ today()->format('d') }}">
                                                         <div>
                                                                 <span class="anz-input-box anz-input-box-1"></span>
                                                         </div>
                                                 </div>
                                                 <div class="anz-input__col-box">
-                                                        <input class="anz-form__input anz-input__col-2" type="text" id="fmonth" name="fmonth" placeholder="MM">
+                                                        <input class="anz-form__input anz-input__col-2" type="text" id="fmonth" name="fmonth" placeholder="MM"
+                                                        value="{{ today()->format('m') }}">
                                                         <div>
                                                                 <span class="anz-input-box anz-input-box-1"></span>
                                                         </div>
                                                 </div>
                                                 <div class="anz-input__col-box">
-                                                        <input class="anz-form__input anz-input__col-4" type="text" id="fyear" name="fyear" placeholder="20YY">
+                                                        <input class="anz-form__input anz-input__col-4" type="text" id="fyear" name="fyear"
+                                                        value="{{ today()->format('Y') }}" placeholder="20YY">
                                                         <div>
                                                                 <span class="anz-input-box anz-input-box-1"></span>
                                                                 <span class="anz-input-box anz-input-box-2"></span>
@@ -66,7 +82,7 @@
                                                 <div class="anz-form__label-md">
                                                         <h4 class="text-heading-4">Individual applicant details</h4>
                                                         <div class="anz-input__col-box">
-                                                                <input class="anz-form__input anz-input__col-8" type="text" name="">
+                                                                <input class="anz-form__input anz-input__col-8" type="text" name=""  value="{{ $consumer['id'] }}">
                                                                 <div>
                                                                         <span class="anz-input-box anz-input-box-1"></span>
                                                                         <span class="anz-input-box anz-input-box-2"></span>
@@ -82,7 +98,7 @@
                                                 <div class="anz-form__label-md">
                                                         <h4 class="text-heading-4">Joint applicant details</h4>
                                                         <div class="anz-input__col-box">
-                                                                <input class="anz-form__input anz-input__col-8" type="text" name="">
+                                                                <input class="anz-form__input anz-input__col-8" type="text" name=""  value="{{ $joint_applicant['id'] }}">
                                                                 <div>
                                                                         <span class="anz-input-box anz-input-box-1"></span>
                                                                         <span class="anz-input-box anz-input-box-2"></span>
